@@ -17,10 +17,7 @@ blocking:
       - https://energized.pro/ultimate/formats/hosts
       - https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt
       - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
-      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-      - https://mirror1.malwaredomains.com/files/justdomains
       - http://sysctl.org/cameleon/hosts
-      - https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
       - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
     special:
       - https://block.energized.pro/extensions/xtreme/formats/hosts
@@ -31,6 +28,7 @@ blocking:
   clientGroupsBlock:
     default:
       - ads
+      - special
   blockType: zeroIp
 prometheus:
   enable: true
