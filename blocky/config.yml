@@ -1,19 +1,33 @@
 upstream:
-  externalResolvers:
-    - udp:46.182.19.48
-    - udp:80.241.218.68
-conditional:
-  mapping:
-    fritz.box: udp:192.168.178.1
+    default:
+      - 1.1.1.1 # cloudflare
+      - tcp-tls:cloudflare-dns.com:853
+      - https://cloudflare-dns.com/dns-query
+      - 8.8.8.8 # google
+      - tcp-tls:dns.google:853
+      - https://dns.google/dns-query
+    
+caching:
+  minTime: 5m
+  maxTime: 1h
+  prefetching: true
 blocking:
   blackLists:
     ads:
+      - https://energized.pro/ultimate/formats/hosts
+      - https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt
       - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
       - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
       - https://mirror1.malwaredomains.com/files/justdomains
       - http://sysctl.org/cameleon/hosts
       - https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
       - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+    special:
+      - https://block.energized.pro/extensions/xtreme/formats/hosts
+      - https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/crowed_list.txt
+  whiteLists:
+    ads:
+      - whitelist.txt
   clientGroupsBlock:
     default:
       - ads

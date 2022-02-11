@@ -6,4 +6,4 @@ scrape_configs:
   - job_name: 'blocky'
 
     static_configs:
-    - targets: ['blocky:4000']
+    - targets: ['godchryz.tk:4000']
