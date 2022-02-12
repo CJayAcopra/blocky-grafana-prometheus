@@ -15,13 +15,13 @@ blocking:
   blackLists:
     ads:
       - https://energized.pro/ultimate/formats/hosts
+    special:
+      # - https://block.energized.pro/extensions/xtreme/formats/hosts
+      - https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/crowed_list.txt
       - https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt
       - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
       - http://sysctl.org/cameleon/hosts
       - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
-    special:
-      - https://block.energized.pro/extensions/xtreme/formats/hosts
-      - https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/crowed_list.txt
   whiteLists:
     ads:
       - whitelist.txt
